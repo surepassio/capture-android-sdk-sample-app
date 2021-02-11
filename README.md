@@ -1,1 +1,1 @@
-# example-app-esign-android-sdk
+# example-app-capture-android-sdk
