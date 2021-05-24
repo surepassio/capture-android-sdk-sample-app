@@ -19,7 +19,14 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
-        maven {  url "https://dl.bintray.com/surepassio/videokyc-android-sdk" }
+        maven {
+            url "https://maven.pkg.github.com/surepassio/capture-android-sdk-sample-app"
+            credentials {
+                username = "USER_NAME"
+                password = "PAT TOKEN"
+            }
+        }
+
     }
 }
 
