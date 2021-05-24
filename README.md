@@ -10,7 +10,13 @@ allprojects {
     repositories {
         jcenter()
         mavenCentral()
-        maven {  url "https://dl.bintray.com/surepassio/videokyc-android-sdk" }
+        maven {
+            url "https://maven.pkg.github.com/surepassio/capture-android-sdk-sample-app"
+            credentials {
+                username = "USER_NAME"
+                password = "PAT TOKEN"
+            }
+        }
     }
 }
 ```
@@ -20,7 +26,7 @@ allprojects {
 
 ```
 dependencies {
-    implementation "io.surepass.sdk:capture-android-sdk:1.0.0"
+    'implementation 'io.surepass.sdk:capture-android-sdk:1.0.2'
 }
 ```
 
