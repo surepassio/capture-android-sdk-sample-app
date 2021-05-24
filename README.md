@@ -13,8 +13,8 @@ allprojects {
         maven {
             url "https://maven.pkg.github.com/surepassio/capture-android-sdk-sample-app"
             credentials {
-                username = "USER_NAME"
-                password = "PAT TOKEN"
+                username = "GITHUB_USER_NAME"
+                password = "GITHUB_PAT_TOKEN" //https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token (Allow Package Install Permission)
             }
         }
     }
