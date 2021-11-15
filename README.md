@@ -1,7 +1,7 @@
-# capture-android-sdk-sample-app
+# Capture Android SDK
 Sample application for Capture SDK
 
-Step to use the SDK below as well:
+## Step to use the SDK as below mentioned:
 
 #### 1. build.grade (project):
 
@@ -64,4 +64,43 @@ import io.surepass.captureandroidsdk.ui.VerificationActivity
             }
         }
     }
+```
+
+### Handling the responses in callback
+
+SurePass Capture Android SDK returns following response depending on the status of process.
+
+**Note:** Only the **200 SUCCESS** status sent to `onActivityResult` function represents successful process. Rest, all the other responses are dispatched to the `onActivityResult` function are errors.
+
+- #### 200 SUCCESS
+
+Returns HTTP status of 200 OK, when the Capture process has been completed successfully.
+
+```json
+{
+  "data": {
+    "client_id": "CLIENT_ID",
+    "data": [...]
+  },
+  "id_type": ""
+  "status_code": 200,
+  "message_code": "SUCCESS",
+  "message": "Verification Successfully",
+  "success": true
+}
+```
+
+- #### 401 UNAUTHORIZED ACCESS
+
+```json
+{
+  "data": {
+    "client_id": "CLIENT_ID"
+  },
+  "id_type": ""
+  "status_code": 401,
+  "message_code": "UNAUTH_ACCESS",
+  "message": "Invalid Token",
+  "success": false
+}
 ```
