@@ -5,7 +5,7 @@ Step to use the SDK below as well:
 
 #### 1. build.grade (project):
 
-```
+```kotlin
 allprojects {
     repositories {
         jcenter()
@@ -24,26 +24,26 @@ allprojects {
 #### 2. build.grade (app):
 
 
-```
+```kotlin
 dependencies {
-    'implementation 'io.surepass.sdk:capture-android-sdk:1.0.2'
+    'implementation 'io.surepass.sdk:capture-android-sdk:2.1.0'
 }
 ```
 
 #### 3. Inside Application:
 
-```
+```kotlin
 import io.surepass.captureandroidsdk.ui.VerificationActivity
 
     fun startCaptureSDK(){
 
         val token = "TOKEN" //token is needed when using full verification
-        val env = "TEST" //Set Enviroment as TEST or PROD
-
+        val env = "PREPROD" //Set Enviroment as PREPROD or PROD
         val intent = Intent(this, VerificationActivity::class.java)
         intent.putExtra("token",token)
         intent.putExtra("env",env)
-        intent.putExtra("pancard",true) //ID Options ["aadhaar","pancard","license","passport","voterid"]
+        intent.putExtra("pancard",true) //Options ["aadhaar","pancard","license","passport","voterid"]
+        intent.putExtra("aadhaar",true)
         
         startActivityForResult(
             intent,
